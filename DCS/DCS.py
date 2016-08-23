@@ -2,6 +2,11 @@
 from pyroute2 import IPDB
 from .node import Node, Host, Switch, Router
 from .link import LinkDB
+import logging
+
+log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
+
 
 class DCS(object):
     def __init__(self):

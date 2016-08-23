@@ -1,4 +1,8 @@
 from pyroute2 import IPRoute
+import logging
+
+log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
 
 class Link(object):
     def __init__(self, node_pair1=None, node_pair2=None):
@@ -10,7 +14,7 @@ class Link(object):
         self.node_pair2 = node_pair2
 
     def __del__(self):
-        print("TODO: Deleting the link pair!!")
+        log.debug("TODO: Deleting the link pair!!")
         # ipr = IPRoute()
         # for link_id in ipr.link_lookup(ifname=self.node_pair1[1]):
         #     ipr.link('del', index=link_id)
